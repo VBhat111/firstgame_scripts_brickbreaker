@@ -18,7 +18,10 @@ public class brickscript : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-        logic.Addscore();
+        if (collision.collider.name == "player")
+        {
+            Destroy(gameObject);
+            logic.Addscore();
+        }
     }
 }

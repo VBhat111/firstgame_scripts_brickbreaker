@@ -16,7 +16,7 @@ public class playerscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb.transform.position.y < -50)
+        if(rb.position.y < 5f)
         {
             logic.gameOver();
         }
@@ -31,10 +31,7 @@ public class playerscript : MonoBehaviour
         {
             logic.bounce1();
         }
-        else if (collision.collider.tag=="shield")
-        {
-            logic.bounce2();
-        }
+        
         else if(collision.collider.name=="blocker")
         {
             logic.bounce3();
